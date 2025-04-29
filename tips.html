@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lake Erie Fishing - Materialize</title>
+  <!-- Materialize CSS CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <!-- Google Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    nav {
+      background-color: #1565c0; /* Custom blue */
+    }
+    .custom-section {
+      padding: 40px 0;
+    }
+    .circle-img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand-logo center">Lake Erie Fishing</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="report.html">Report</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="materialize.html">Materialize</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="section custom-section">
+      <h4 class="blue-text text-darken-3">Explore the Beauty of Lake Erie</h4>
+      <p>Lake Erie offers an incredible outdoor experience for anglers of all skill levels. With expansive waters and abundant fish species, it's the perfect place to spend your weekends. Whether you're trolling for walleye or casting for bass, Lake Erie has a place for you.</p>
+      <p>Come prepared with your favorite gear and be ready for changing weather conditions. Early mornings provide the best chance for bites, especially near popular reef spots. Stay safe and always check local regulations before heading out.</p>
+    </div>
+
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m6">
+          <img src="images/fishing-boat.jpg" alt="Fishing Boat on Lake Erie" class="circle responsive-img circle-img">
+        </div>
+        <div class="col s12 m6">
+          <h5 class="blue-text">Why Fish Lake Erie?</h5>
+          <ul class="collection">
+            <li class="collection-item">Known for trophy walleye</li>
+            <li class="collection-item">Easy access to multiple launch points</li>
+            <li class="collection-item">Family-friendly shore fishing locations</li>
+            <li class="collection-item">Seasonal fishing events and tournaments</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h5 class="blue-text text-darken-2">Watch Our Lake Erie Fishing Recap</h5>
+      <div class="video-container">
+        <iframe width="853" height="480" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Lake Erie Fishing" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="section">
+      <h5 class="blue-text text-darken-2">Contact Information</h5>
+      <p><strong>Email:</strong> <a href="mailto:info@lakeeriefishing.com">info@lakeeriefishing.com</a></p>
+      <p><strong>Phone:</strong> (123) 456-7890</p>
+      <p><strong>Location:</strong> Lake Erie, Ohio</p>
+    </div>
+  </div>
+
+  <footer class="page-footer blue darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Lake Erie Fishing</h5>
+          <p class="grey-text text-lighten-4">Your source for the best fishing updates and community in the Great Lakes.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2025 Lake Erie Fishing
+      </div>
+    </div>
+  </footer>
+
+  <!-- Materialize JS CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    // Initialize modal
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+    });
+
+
+    // Function to display selected pastry
+    function displayPastry() {
+        const selectedPastry = document.querySelector('input[name="pastry"]:checked').value;
+        document.getElementById('pastry-response').innerText = `You selected: ${selectedPastry}`;
+    }
+    // Function to handle email subscription form submission
+    function submitEmail(event) {
+        event.preventDefault();
+        const email = document.getElementById('email').value;
+        document.getElementById('email-response').innerText = `Thank you for subscribing! Updates will be sent to: ${email}`;
+        document.getElementById('email').value = ''; // Clear the input
+
+
+        // Display modal
+        const modalText = document.getElementById('modal-content-text');
+        modalText.innerText = `Thank you for subscribing! Updates will be sent to: ${email}`;
+        const modal = M.Modal.getInstance(document.getElementById('modal1'));
+        modal.open();
+    }
+</script>
+
+div id="radio-section" class="section container">
+       <h2>Select Your Favorite Pastry</h2>
+       <form>
+           <p>
+               <label>
+                   <input name="pastry" type="radio" value="Croissant" onclick="displayPastry()"/>
+                   <span>Croissant</span>
+               </label>
+           </p>
+           <p>
+               <label>
+                   <input name="pastry" type="radio" value="Muffin" onclick="displayPastry()"/>
+                   <span>Muffin</span>
+               </label>
+           </p>
+           <p>
+               <label>
+                   <input name="pastry" type="radio" value="Donut" onclick="displayPastry()"/>
+                   <span>Donut</span>
+               </label>
+           </p>
+       </form>
+       <div id="pastry-response"></div>
+   </div>
+
+   <!-- Email Feedback Section -->
+   <div id="feedback-section" class="section container">
+    <h2>Subscribe for Updates</h2>
+    <form onsubmit="submitEmail(event)">
+        <div class="input-field">
+            <input id="email" type="email" required>
+            <label for="email">Email</label>
+        </div>
+        <button type="submit" class="btn waves-effect waves-light">Subscribe</button>
+    </form>
+    <div id="email-response"></div>
+</div>
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Check Your email-response</h4>
+    <p id="modal-content-text"></p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+      >Close</a
+    >
+  </div>
+</div>
+
+
+</body>
+</html>

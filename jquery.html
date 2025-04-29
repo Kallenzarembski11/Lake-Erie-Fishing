@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delicious Bakery</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <!-- Interaction 1: Alert on hover -->
+  <script>
+    $(document).ready(function(){
+      $("#hoverWelcome").mouseenter(function(){
+        alert("Welcome to our Bakery!");
+      });
+    });
+  </script>
+
+  <!-- Interaction 2: Click to hide paragraph -->
+  <script>
+    $(document).ready(function(){
+      $(".clickToHide").click(function(){
+        $(this).hide();
+      });
+    });
+  </script>
+
+  <!-- Interaction 3: Toggle paragraphs -->
+  <script>
+    $(document).ready(function(){
+      $("#toggleBtn").click(function(){
+        $(".togglePara").toggle();
+      });
+    });
+  </script>
+
+  <!-- Interaction 4: Animate with color change -->
+  <script>
+    $(document).ready(function(){
+      $("#animateBtn").click(function(){
+        $("#animatedText").css("color", "pink").slideUp(2000).slideDown(2000);
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Delicious Bakery</h1>
+    <div class="navbar">
+      <a href="index.html">Bakery Home</a>
+      <a href="recipes.html">Recipe Cards</a>
+      <a href="celebrity.html">Celebrity Favorites</a>
+      <a href="materialize.html">Materialize</a>
+      <a href="jquery.html">JQuery</a>
+      <a href="bootstrap.html">Bootstrap</a>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+  </header>
+
+  <!-- Section 1: Hover Alert -->
+  <section style="background-color: #eee8ff; padding: 10px;">
+    <p id="hoverWelcome">Hover over this text to feel the bakery love!</p>
+  </section>
+
+  <hr>
+
+  <!-- Section 2: Click to Hide -->
+  <section style="background-color: #ffdfdf; padding: 10px;">
+    <p class="clickToHide">Click me to make me vanish like a warm cookie!</p>
+    <p class="clickToHide">Don't be shy, click me too!</p>
+    <p class="clickToHide">I'm here... until you click me!</p>
+  </section>
+
+  <hr>
+
+  <!-- Section 3: Toggle Paragraphs -->
+  <section style="background-color: #d0f0c0; padding: 10px;">
+    <button id="toggleBtn">Show/Hide Bakery Tips</button>
+    <p class="togglePara">Always preheat your oven before baking!</p>
+    <p class="togglePara">Use room temperature butter for fluffier cakes.</p>
+  </section>
+
+  <hr>
+
+  <!-- Section 4: Animate on Click -->
+  <section style="background-color: #cce5ff; padding: 10px;">
+    <p id="animatedText">Click the button below to animate this sweet message!</p>
+    <button id="animateBtn">Animate Message</button>
+  </section>
+
+</body>
+</html>
